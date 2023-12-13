@@ -1,0 +1,1428 @@
+/* Подключение шрифтов */
+@font-face {
+  font-family: "ManropeBold";
+  src: url(../src/fonts/Manrope-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(../src/fonts/Manrope-Regular.ttf);
+}
+
+@font-face {
+  font-family: "ManropeLight";
+  src: url(../src/fonts/Manrope-Light.ttf);
+}
+
+/* Сброс базовых стилей */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  outline: none;
+}
+
+/* Общие стили для всего приложения */
+
+body {
+  background: #040C18;
+  padding: 0 2rem;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+a {
+  color: #FF8A71;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a,
+button {
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+a:hover,
+button:hover {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+button:hover {
+  background-color: #ae67fa;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 60px;
+  color: #ae67fa;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+h1,
+h2 {
+  font-family: "ManropeBold", sans-serif;
+  background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h3 {
+  font-family: "ManropeBold", sans-serif;
+  color: #fff;
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+  color: #fff;
+}
+
+.btn {
+  display: flex;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.btn2{
+  display: flex;
+  padding: 1rem 4rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
+
+.primary-btn {
+  background-color: #ff4820;
+}
+
+.section {
+  max-width: 1169px;
+  width: 100%;
+}
+
+.lined_header {
+  background: url("../src/assets/img/gradient_line.svg") no-repeat 0 0 transparent;
+  padding: 1rem 0;
+}
+
+/* Стили для Шапки */
+
+.header {
+  display: flex;
+  max-width: 1169px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 0;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  background: #040C18;
+}
+
+.header .header__logo .logo__link {
+  display: flex;
+  align-items: center;
+}
+
+.header .header__menu .menu {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.header .header__right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 2rem;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.header .header__right.hidden {
+  opacity: 0;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  visibility: hidden;
+}
+
+.header .header__right .menu__close {
+  width: 38px;
+  height: 38px;
+}
+
+.header .header__right .menu__close.hidden {
+  display: none;
+}
+
+.header .header__menu .menu .menu__item a {
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+
+.header .header__menu .menu .menu__item:hover a {
+  border-bottom-color: #fff;
+}
+
+.header .header__menu .menu .menu__item.active a {
+  color: #f49867;
+  border-bottom-color: #f49867;
+}
+
+.header .header__burger_menu {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  cursor: pointer;
+}
+
+.header .header__burger_menu.hidden {
+  display: none;
+}
+
+.header .header__burger_menu .burger_menu__line,
+.header .header__right .menu__close .menu__line {
+  width: 43px;
+  height: 5px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.header .header__right .menu__close .menu__line:nth-child(1) {
+  position: relative;
+  top: 15px;
+  right: 4px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+.header .header__right .menu__close .menu__line:nth-child(2) {
+  position: relative;
+  top: 10px;
+  right: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+.header .cta_buttons {
+  display: flex;
+  column-gap: 1rem;
+}
+
+
+/* Стили для первого экрана (Хиро секция) */
+ 
+.hero_section {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1rem;
+  margin: 14rem 0 3rem;
+}
+
+.hero_section .hero_section__left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 3rem;
+  width: 75%;
+}
+
+.hero_section .hero_section__left .left__description {
+  color: #81afdd;
+}
+
+.hero_section .hero_section__left .left__cta_buttons {
+  display: flex;
+  width: 100%;
+}
+
+.hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+  min-width: 250px;
+  width: 70%;
+  padding: 8px 32px;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #052d56;
+  border-bottom: none;
+  background-color: #052d56;
+}
+
+.hero_section .hero_section__left .left__social_approve{
+  width: 100%;
+  display: flex;
+  column-gap: 1.5rem;
+  align-items: center;
+}
+
+.hero_section .hero_section__left .left__social_approve p{
+  font-size: 12px;
+}
+
+
+.hero_section .hero_section__left .left__social_approve .social_approve_img{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.hero_section .hero_section__left .left__social_approve .social_approve_img img{
+  margin-left: -10px;
+
+}
+
+.count_of_social_approve_circle{
+  display: flex;
+  align-items: center;
+}
+
+.hero_section .hero_section__left .left__social_approve .count_of_social_approve_circle_text{
+  margin-left: -1.65rem;
+  font-size: 8px;
+  font-weight: 800;
+  color: #000000;
+}
+
+
+.hero_section .hero_section__left .left__cta_buttons .btn {
+  border-radius: 0 4px 4px 0;
+}
+
+.hero_section .hero_section__right {
+  height: 100%;
+}
+
+.hero_section .hero_section__right img {
+  width: 100%;
+}
+
+/* Секция брендов */
+.brands_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 6rem 0;
+  column-gap: 3rem;
+}
+
+/* Что такое Chat GPT */
+
+.what_is_chatgpt_section {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  margin: 6rem 0;
+  row-gap: 7rem;
+  background: url(../src/assets/img/what_is_gpt_3_bg.svg) no-repeat 0 0 / cover;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top {
+  display: flex;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top .top__header {
+  flex: 30%;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top .top__content {
+  flex: 65%;
+  color: #81afdd;
+  font-size: 14px;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header {
+  width: 500px;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle a {
+  color: #ff8a71;
+  font-size: 16px;
+  border-bottom: 1px solid transparent;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle a:hover {
+  border-bottom: 1px solid #ff8a71;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  column-gap: 2rem;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.what_is_chatgpt_section
+  .what_is_chatgpt_section__bottom
+  .bottom__container
+  .container__content {
+  color: #81afdd;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Будущее наступило */
+
+.future_here {
+  display: flex;
+  column-gap: 6rem;
+  margin: 6rem 0 2rem;
+}
+
+.future_here .future_here__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 2rem;
+  flex: 2;
+}
+
+/* .future_here .future_here__left .left__header {
+} */
+
+.future_here .future_here__left .left__cta {
+  color: #f49867;
+  border-bottom: 1px solid transparent;
+}
+
+.future_here .future_here__left a:hover {
+  border-bottom: 1px solid #f49867;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.future_here .future_here__right {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.future_here .future_here__right .right__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.future_here .future_here__right .right__container .container__header {
+  width: 35%;
+}
+
+.future_here .future_here__right .right__container .container__content {
+  width: 55%;
+  color: #81afdd;
+}
+.early_access{
+  display: flex;
+  column-gap: 1rem;
+  margin-top: 3rem;
+  
+
+}
+.early_access .early_access_section__left{
+  width:80%;
+  margin-left: 3rem
+}
+
+.early_access .early_access_section__right{
+  height: 100%;
+  display: flex;
+  margin-top: 15rem;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1.5rem;
+  
+  
+}
+.early_access .early_access_section__right .right__mini_header{
+  color: #71E5FF;
+}
+
+.early_access .early_access_section__right .right__header{
+  width: 70%;
+}
+
+.early_access .early_access_section__right .right__description{
+  width: 80%;
+  color: #81AFDD;
+  line-height: 1.8;
+
+}
+
+.early_access .early_access_section__right .right__cta{
+  color: #f49867;
+  border-bottom: 1px solid transparent;
+}
+
+.early_access_section__left img{
+  height: 100%;
+}
+
+.registration_bar_section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 1.5rem 3rem 3rem 3rem;
+  margin: 10rem 0;
+  align-items: center;
+  background: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
+  border-radius: 10.72px;
+  -webkit-border-radius: 10.72px;
+  -moz-border-radius: 10.72px;
+  -ms-border-radius: 10.72px;
+  -o-border-radius: 10.72px;
+
+}
+
+.registration_bar_section .registration_bar_section__left{
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  width: 60%;
+}
+.registration_bar_section .registration_bar_section__left .right__mini_header{
+  color:#000000;
+  font-size: 12px;
+}
+
+
+.registration_bar_section .registration_bar_section__right .cta_buttons {
+  background-color: #000000;
+  border-radius: 40px ;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
+
+.registration_bar_section .registration_bar_section__right{
+  display: flex;
+  height: 50%;
+  margin-top: 1rem;
+
+}
+
+.registration_bar_section .registration_bar_section__left .right__header{
+  color:#000000;
+  font-size: 24px;
+  font-weight: 800;
+
+}
+
+
+.news__section{
+  margin-bottom: 7rem;
+}
+
+.news_header{
+  margin-bottom: 4rem;
+  width: 65%;
+}
+
+.news__section .news_block{
+  display: flex;
+  justify-content: space-between;
+  height: 43rem;
+  
+}
+
+.news_block__left {
+  display: flex;
+  width: 35%;
+  height: 100%;
+  background: #042C54;
+  border-radius: 3rem 0 0 0 ;
+
+}
+
+.container__left img{
+  width: 100%;
+}
+
+.news_block__right{
+  height: 100%;
+  
+}
+
+.news_block__right .container_text__right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 0 2rem 2rem;
+  width: 96%;
+  height: 58%;
+}
+
+.upper_text__right h3{
+font-size: 19px;
+}
+
+.upper_text__right{
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.upper_text__left{
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+ .container_text__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.3rem 5rem 2.3rem 2rem;
+  height: 58%;
+
+}
+  .news_block p {
+  display: flex;
+  font-size: 11.65px;
+  color: #FFFFFF;
+}
+.news_block a {
+  display: flex;
+  font-size: 11.65px;
+  color: #FFFFFF;
+}
+
+
+.news_block__right {
+  width: 60%;
+  height: 107.3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.container__right img{
+  width: 100%;
+}
+
+.container__right {
+  width: 47%;
+    height: 43.2%;
+  margin-bottom: 0;
+  background: #042C54;
+  border-radius: 3rem 0 0 0 ;
+  
+}
+
+.end__upper_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  background: #031B34;
+  height: 40rem;
+}
+
+.end_header__upper{
+  max-width: 1169px;
+  width: 60%;
+  margin: 0 0 3.7rem;
+}
+
+.end__cta {
+  display: flex;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border: 1px solid #FFF;
+  padding: 1.2rem 3.5rem 1.2rem 3.5rem;
+}
+
+.end__lower_container {
+  display: flex;
+  justify-content: space-between;
+  background: #031B34;
+  padding-bottom: 70px;
+}
+
+.lower__left{
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  margin: 0 4rem 0 160px;
+  row-gap: 2.5rem;
+}
+
+.lower__right{
+  display: flex;
+  margin-right: 160px;
+  justify-content:space-between;
+  width: 45%;
+  max-width: 1024px;
+}
+
+.end__right_container{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+
+.end__right_container .end__sub{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.7rem;
+  min-width: 10rem;
+    width: 50%;
+
+}
+
+.end{
+  max-width: none;
+  width: 100%;
+}
+
+.end .end_title p{
+  font-size: 14px;
+}
+
+.end p{
+  font-size: 12px;
+}
+
+.end__logo{
+  width: 118px;
+}
+
+.end .license{
+  display: flex;
+  justify-content: center;
+} 
+
+/* Медиа запросы для адаптива */
+
+@media screen and (max-width: 1030px) {
+  .page {
+    align-content: center;
+  }
+
+  .header {
+    padding: 2rem;
+  }
+
+  .header .header__logo .logo__link img {
+    width: 200%;
+  }
+
+  .header .header__right {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    row-gap: 53px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    background: #031b34;
+  }
+
+  .header .header__menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .header .header__menu .menu {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+  }
+
+  .header .header__menu .menu__close {
+    position: absolute;
+    right: -100px;
+    top: -100px;
+  }
+
+  .header .header__menu .menu .menu__item a {
+    font-size: 48px;
+  }
+
+  .hero_section {
+    flex-direction: column;
+    justify-content: center;
+    column-gap: 0;
+    width: 90%;
+  }
+
+  .hero_section .hero_section__left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero_section .hero_section__right {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  .hero_section .hero_section__right img {
+    width: 60%;
+  }
+
+  .hero_section .hero_section__left .left__cta_buttons {
+    justify-content: center;
+  }
+
+  .what_is_chatgpt_section {
+    row-gap: 4rem;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container {
+    row-gap: 0;
+  }
+
+  .future_here {
+    column-gap: 0;
+    flex-direction: column;
+    row-gap: 4rem;
+  }
+
+  .future_here .future_here__left {
+    row-gap: 1rem;
+  }
+
+  .news_header {
+    width: 75%;
+  }
+
+  .early_access_section__left img {
+      height: 83%;
+}
+
+.early_access .early_access_section__left {
+  width: 50%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.registration_bar_section {
+  margin: 6rem 0 10rem 0;
+}
+
+.container_text__left {
+  height: 66%;
+}
+
+.news_block__right .container_text__right {
+  height: 66%;
+}
+
+.end__lower_container{
+  column-gap: 6rem;
+}
+
+.lower__right{
+  margin-right: 105px;
+}
+
+.lower__left{
+    width: 33%;
+    margin-left: 105px;
+}
+
+.end__right_container .end__sub {
+  min-width: 8rem;
+  width: 89%;
+}
+
+.end{
+  width: 100%;
+}
+
+.end_header__upper{
+  width: 100%;
+}
+
+}
+
+@media screen and (max-width: 768px) {
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  h1 {
+    font-size: 46px;
+  }
+
+  h2 {
+    font-size: 27px;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+
+  .header .header__menu .menu__close {
+    position: absolute;
+    right: -100px;
+    top: -100px;
+  }
+
+  .hero_section {
+    width: 100%;
+  }
+
+  .brands_section {
+    margin-top: -15px;
+    padding-bottom: 0;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__top {
+    flex-direction: column;
+  }
+
+  .hero_section .hero_section__right img {
+    width: 85%;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header {
+    width: auto;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+    flex-direction: column;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+    row-gap: 2rem;
+  }
+
+  .what_is_chatgpt_section {
+    row-gap: 3rem;
+  }
+
+  .what_is_chatgpt_section {
+    margin: 6rem 0 0;
+  }
+
+  .what_is_chatgpt_section
+    .what_is_chatgpt_section__bottom
+    .bottom__container
+    .container__content {
+    line-height: 1.5;
+  }
+
+  a {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  .hero_section{
+    margin: 10rem 0 3rem;
+  }
+
+  .hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+    min-width: auto;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle a {
+    font-size: 12px;
+}
+
+  .future_here {
+    row-gap: 3rem;
+  }
+
+  .future_here .future_here__right .right__container {
+    flex-direction: column;
+  }
+
+  .future_here .future_here__right .right__container .container__header {
+    width: 100%;
+  }
+
+  .future_here .future_here__right .right__container .container__content {
+    width: 100%;
+  }
+
+  .future_here .future_here__right {
+    row-gap: 2rem;
+  }
+
+  .early_access {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 2rem;
+    margin: 4rem 0 2rem;
+}
+
+.early_access .early_access_section__right {
+  margin-top: 0;
+}
+
+.early_access .early_access_section__right .right__description {
+  width: 100%;
+}
+
+.registration_bar_section .registration_bar_section__left .right__header {
+  font-size: 19px;
+}
+
+.registration_bar_section {
+  margin: 5rem 0 5rem 0;
+  padding: 1.5rem 2rem 2.5rem 2rem;
+}
+
+.news__section .news_block {
+  flex-direction: column;
+}
+
+.container__left {
+  display: flex;
+  flex-direction: row;
+}
+
+.container_text__left {
+  height: 108%;
+}
+
+.news__section .news_block {
+  row-gap: 2.5rem;
+  height: 100%;
+}
+
+.news_block__left {
+  width: 100%;
+  height: 100%;
+}
+
+.container__left img {
+    width: 40%;
+    height: 100%;
+}
+
+.news_block__right {
+  width: 100%;
+}
+
+.news_block__right {
+  display: flex;
+  height: 100%;
+  row-gap: 2rem;
+}
+
+.container__right {
+  display: flex;
+  width: 100%;
+  height: 8.6rem;
+  margin-bottom: 0;
+  background: #042C54;
+  border-radius: 3rem 0 0 0;
+}
+
+.container__right img {
+  width: 40%;
+}
+
+.news_header {
+  margin-bottom: 3rem;
+}
+
+.news_block__right .container_text__right {
+
+  row-gap: 1.3rem;
+}
+
+.news_block__right .container_text__right {
+  height: 100%;
+}
+
+.upper_text__right h3 {
+  font-size: 17px;
+}
+
+.upper_text__right p {
+  font-size: 10px;
+}
+
+.container__right a {
+  display: flex;
+  font-size: 10px;
+  color: #FFFFFF;
+
+}
+
+.end_header__upper {
+  width: 90%;
+  margin: 0 0 2rem;
+}
+
+.end__cta {
+font-size: 12px;
+}
+
+.end__upper_container {
+  height: 30rem;
+}
+
+  .lower__left{
+    width: 100%;
+    margin-left: 50px;
+}
+
+}
+
+@media screen and (max-width: 425px) {
+
+  a {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+
+  .header .header__menu .menu .menu__item a {
+    font-size: 36px;
+}
+
+  .header .header__menu .menu__close {
+    position: absolute;
+    right: 110px;
+    top: 375px;
+  }
+
+  .hero_section{
+    margin: 10rem 0 3rem;
+  }
+
+  .hero_section .hero_section__left {
+    row-gap: 2rem;
+  }
+
+  .hero_section .hero_section__left .left__social_approve {
+    flex-direction: column;
+    row-gap: 0.5rem;
+  }
+
+  .hero_section .hero_section__left .left__social_approve p {
+    font-size: 12px;
+    width: 60%;
+  }
+  
+  .what_is_chatgpt_section {
+    margin: 4rem 0 0;
+}
+
+  .brands_section {
+   flex-wrap: wrap;
+  }
+  
+  .brands_section img {
+    margin-bottom: 0.7rem;
+   }
+
+   .future_here {
+    margin: 4rem 0 0;
+   }
+
+   .early_access {
+    margin: 5rem 0 2rem;
+   }
+
+    .what_is_chatgpt_section .what_is_chatgpt_section__top .top__content {
+      font-size: 12px;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container .container__content {
+  font-size: 12px;
+}
+
+.early_access .early_access_section__left {
+  margin-left: 0;
+}
+
+.early_access_section__left img {
+  width: 190%;
+}
+
+.registration_bar_section .registration_bar_section__left .right__mini_header {
+  font-size: 10px;
+}
+
+.registration_bar_section .registration_bar_section__left .right__header {
+  font-size: 14px;
+
+}
+
+.registration_bar_section {
+flex-direction: column;
+}
+
+.registration_bar_section .registration_bar_section__left {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.btn2{
+  font-size: 14px;
+}
+
+.news_header {
+  width: 100%;
+}
+
+.container__left {
+  flex-direction: column;
+  height: 31rem;
+}
+
+.container__left img {
+  width: 100%;
+}
+
+.container__right {
+  flex-direction: column;
+  height: 18rem;
+}
+
+.container__right img {
+  width: 100%;
+}
+
+.end__upper_container {
+  height: 23rem;
+}
+
+.end__lower_container {
+  padding-bottom: 3rem;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.lower__left{
+  width: 57%;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.end__logo {
+  width: 4rem;
+}
+
+.end__adress{
+  width: 70%;
+}
+
+.lower__right{
+  margin: 0 0 2rem 0 ;
+  width: 100%;
+  row-gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.end__right_container{
+  row-gap: 1.5rem;
+  width: 70%;
+  align-items: center;
+  
+}
+
+.end__sub{}
+
+.end__right_container .end__sub {
+  row-gap: 1rem;
+}
+
+.end{
+  width: 100%;
+}
+
+}
+
+@media screen and (max-width: 375px) {
+
+  a {
+    font-size: 11px;
+  }
+
+  p {
+    font-size: 11px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .header .cta_buttons {
+    display: flex;
+    column-gap: 1rem;
+}
+
+  .header .header__menu .menu__close {
+    position: absolute;
+  }
+
+  .hero_section{
+    margin: 9rem 0 3rem;
+  }
+
+
+}
+
+@media screen and (max-width: 320px) {
+
+  a {
+    font-size: 10px;
+  }
+
+  p {
+    font-size: 10px;
+  }
+
+  h1 {
+    font-size: 23px;
+  }
+
+  h2 {
+    font-size: 17px;
+  }
+
+  .header .header__menu .menu .menu__item a {
+    font-size: 32px;
+  }
+
+  .hero_section .hero_section__left .left__social_approve .social_approve_img img{
+    width: 2rem;
+  }
+
+  .hero_section .hero_section__left .left__social_approve p {
+  font-size: 10px;
+  width: 60%;
+  }
+
+.end__cta {
+  font-size: 11px;
+}
+
+  .end a {
+    font-size: 10px;
+  }
+
+  .end p {
+    font-size: 10px;
+}
+
+.end{
+  width: 100%;
+}
+
+.end__right_container .end__sub {
+  min-width: 4rem;
+  width: 106%;
+}
+
+}
